@@ -4,7 +4,7 @@ class SongsController < ApplicationController
       @artist = Artist.find(params[:artist_id])
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = "Artist not found"
-      redirect 'artists/index'
+      redirect_to 'artists/index'
     end
 
     if @artist
@@ -19,7 +19,7 @@ class SongsController < ApplicationController
       @song = Song.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = "Song not found"
-      redirect 'index'
+      redirect_to 'index'
     end
   end
 
